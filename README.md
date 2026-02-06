@@ -8,6 +8,7 @@ This project follows the [Official Django Tutorial](https://docs.djangoproject.c
 ## Learning Progress
 
 ### ✅ Part 1: Requests and Responses
+**Completed:** [Date]
 
 **Key Concepts Learned:**
 - Creating a Django project with `django-admin startproject`
@@ -27,6 +28,7 @@ This project follows the [Official Django Tutorial](https://docs.djangoproject.c
 ---
 
 ### ✅ Part 2: Models and the Admin Site
+**Completed:** [Date]
 
 **Key Concepts Learned:**
 - Defining models (Question and Choice models)
@@ -52,7 +54,8 @@ This project follows the [Official Django Tutorial](https://docs.djangoproject.c
 
 ---
 
-### ✅ Part 3: Views and Templates\
+### ✅ Part 3: Views and Templates
+**Completed:** January 23, 2026
 
 **Key Concepts Learned:**
 - Creating templates in `app/templates/app/` directory structure
@@ -80,13 +83,38 @@ This project follows the [Official Django Tutorial](https://docs.djangoproject.c
 
 ---
 
-### ⬜ Part 4: Forms and Generic Views
-**Status:** Not started
+### ✅ Part 4: Forms and Generic Views
+**Completed:** January 23, 2026
 
-**Topics to Cover:**
-- Writing a simple form
-- Using generic views
-- Reducing code with generic views
+**Key Concepts Learned:**
+- Creating HTML forms with Django
+- Form processing with POST method
+- CSRF protection with `{% csrf_token %}`
+- HTML form elements:
+  - `<form>` with action and method attributes
+  - `<fieldset>` and `<legend>` for grouping
+  - `<input type="radio">` for single-choice selection
+  - `<label>` for clickable text
+  - `<input type="submit">` for form submission
+- Template loop utilities (`forloop.counter`)
+- Processing form data in views with `request.POST`
+- Handling form errors and validation
+- The `HttpResponseRedirect` and `reverse()` function
+- Race conditions and `F()` expressions for atomic updates
+- Converting function-based views to class-based generic views:
+  - `ListView` for displaying lists of objects
+  - `DetailView` for displaying single object details
+- Benefits of generic views (less code, built-in functionality)
+- Updating URLconf for class-based views (`.as_view()`)
+
+**Key Takeaways:**
+- Always use POST for actions that modify data
+- CSRF tokens are required for security in POST forms
+- Radio buttons with the same `name` attribute form a group (only one selectable)
+- Use `reverse()` to generate URLs by name in Python code
+- Generic views handle common patterns automatically (list, detail, create, update, delete)
+- Class-based views provide more structure and reusability than function-based views
+- The `vote` view remains custom because it has unique logic specific to the polls app
 
 ---
 
@@ -143,6 +171,7 @@ mysite/
             polls/
                 index.html
                 detail.html
+                results.html
 ```
 
 ## Commands Reference
@@ -196,6 +225,9 @@ python manage.py createsuperuser
 - **Context:** Dictionary of data passed from views to templates
 - **URL Patterns:** Use `<int:variable>` to capture URL parts and pass them to views
 - **Named URLs:** Reference URLs by name instead of hardcoding paths for maintainability
+- **Forms:** Use POST method for data submission, always include CSRF token for security
+- **Generic Views:** Pre-built class-based views for common patterns (ListView, DetailView, etc.)
+- **Function-based vs Class-based Views:** Functions for custom logic, classes for standard patterns
 
 ### Tips
 - Follow the tutorial linearly - don't get lost in documentation links
@@ -207,7 +239,8 @@ python manage.py createsuperuser
 
 ## Next Steps
 - [x] Complete Part 3 of the tutorial ✅
-- [ ] Complete Part 4 of the tutorial
+- [x] Complete Part 4 of the tutorial ✅
+- [ ] Complete Part 5 of the tutorial (Testing)
 - [ ] Build a simple personal project to reinforce learning
 - [ ] Explore Django REST Framework (after completing basic tutorial)
 
